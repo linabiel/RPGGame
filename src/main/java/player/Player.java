@@ -17,12 +17,12 @@ public class Player {
     private Inventory inventory;
     private ArrayList<Spell> spells;
 
-    public Player(String name, PlayerType playerClass, int health, int mana, int stamina, int level, int experience) {
+    public Player(String name, PlayerType playerClass, int level, int experience) {
         this.name = name;
         this.playerClass = playerClass;
-        this.health = health;
-        this.mana = mana;
-        this.stamina = stamina;
+        this.health = playerClass.health;
+        this.mana = playerClass.mana;
+        this.stamina = playerClass.stamina;
         this.level = level;
         this.experience = experience;
     }
@@ -38,7 +38,7 @@ public class Player {
     }
 
     public void constructSpells(ArrayList<Spell> spells) {
-        spells = new Spell(spells);
+        this.spells = spells;
     }
 
     public String getName() {
